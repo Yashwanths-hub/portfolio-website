@@ -599,15 +599,74 @@
     if (emailBtn) emailBtn.addEventListener('click', () => copyText('iamyashwanths2004@gmail.com', 'Email'));
     if (phoneBtn) phoneBtn.addEventListener('click', () => copyText('9344485378', 'Phone'));
 
-    // Contact Form
+    // Contact Form Async Submission
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-      contactForm.addEventListener('submit', (e) => {
+      contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+
         const nameInput = document.getElementById('sender-name');
-        const name = nameInput ? nameInput.value.trim() : 'there';
-        showToast(`Thank you, ${name}! Your message has been noted.`);
-        contactForm.reset();
+        const emailInput = document.getElementById('sender-email');
+        const messageInput = document.getElementById('sender-message');
+        const submitBtn = contactForm.querySelector('.btn-submit');
+
+        const name = nameInput ? nameInput.value.trim() : '';
+        const email = emailInput ? emailInput.value.trim() : '';
+        const message = messageInput ? messageInput.value.trim() : '';
+
+        if (!name || !email || !message) {
+          showToast('Please fill out all fields.');
+          return;
+        }
+
+        const originalBtnText = submitBtn ? submitBtn.innerHTML : '<span>SEND MESSAGE</span><span class="btn-arrow">→</span>';
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<span>SENDING...</span>';
+          submitBtn.style.opacity = '0.7';
+        }
+
+        try {
+          const res = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, message })
+          });
+
+          const data = await res.json();
+
+          if (res.ok && data.success) {
+            showToast(`Thank you, ${name}! Message delivered & saved.`);
+            contactForm.reset();
+
+            // Display in-form confirmation banner
+            let confBanner = document.getElementById('form-confirmation');
+            if (!confBanner) {
+              confBanner = document.createElement('div');
+              confBanner.id = 'form-confirmation';
+              confBanner.style.cssText = 'padding: 12px 16px; background-color: #111111; color: #ffffff; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em; border-left: 3px solid var(--accent-red); margin-top: 12px; transition: opacity 0.3s ease;';
+              contactForm.appendChild(confBanner);
+            }
+            confBanner.innerHTML = `✓ Message logged [ID: ${data.id.slice(0, 12)}...]. I will reply to <strong>${email}</strong> shortly.`;
+            setTimeout(() => {
+              if (confBanner) confBanner.style.opacity = '0';
+              setTimeout(() => { if (confBanner) confBanner.remove(); }, 400);
+            }, 6000);
+          } else {
+            throw new Error(data.error || 'Server rejected message');
+          }
+        } catch (err) {
+          console.warn('Backend contact failed, offering direct mailto fallback:', err);
+          showToast(`Opening email client to contact Yashwanth...`);
+          // Fallback to mailto link
+          window.location.href = `mailto:iamyashwanths2004@gmail.com?subject=Portfolio%20Inquiry%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom:%20${encodeURIComponent(name)}%20(${encodeURIComponent(email)})`;
+        } finally {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.style.opacity = '1';
+          }
+        }
       });
     }
 
