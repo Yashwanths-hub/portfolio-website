@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yashwanth S — Full Stack Software Engineer | Ideas In Motion</title>
+  
+  <!-- Typography matching the editorial design -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">
+    <i data-lucide="check-circle-2" class="toast-icon"></i>
+    <span id="toast-message">Copied to clipboard</span>
+  </div>
+
+  <!-- Top Header Navigation -->
+  <header class="site-header">
+    <div id="scroll-progress-bar" class="scroll-progress-bar"></div>
+    <div class="header-inner">
+      <!-- Brand & studio subtitle -->
+      <div class="brand-group">
+        <a href="#top" class="brand-title">YASHWANTH S <sup>®</sup></a>
+        <div class="brand-meta">
+          <span>FULL STACK ENGINEER</span>
+          <span class="meta-sub">BACKEND · AI · SYSTEMS</span>
+        </div>
+      </div>
+
+      <!-- Center navigation links with vertical line separators -->
+      <nav class="nav-links">
+        <a href="#projects" class="nav-link">WORK</a>
+        <span class="nav-sep">|</span>
+        <a href="#capabilities" class="nav-link">SERVICES</a>
+        <span class="nav-sep">|</span>
+        <a href="#about" class="nav-link">ABOUT</a>
+        <span class="nav-sep">|</span>
+        <a href="#experience" class="nav-link">JOURNAL</a>
+        <span class="nav-sep">|</span>
+        <a href="#contact" class="nav-link">CONTACT</a>
+      </nav>
+
+      <!-- Right status indicator -->
+      <div class="header-right">
+        <div class="status-pill" title="Available for Summer 2025 & 2026 roles">
+          <span class="status-dot"></span>
+          <span class="status-text">AVAILABLE FOR WORK</span>
+        </div>
+        <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Toggle menu">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="mobile-drawer">
+      <a href="#projects" class="mobile-link">WORK</a>
+      <a href="#capabilities" class="mobile-link">SERVICES</a>
+      <a href="#about" class="mobile-link">ABOUT</a>
+      <a href="#experience" class="mobile-link">JOURNAL</a>
+      <a href="#contact" class="mobile-link">CONTACT</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ==============================================
+         01 / 04 HERO SECTION
+         ============================================== -->
+    <section class="section-hero">
+      <div class="hero-grid">
+
+        <!-- Left Hero Column -->
+        <div class="hero-left">
+          <div class="section-badge">
+            <span class="sec-num">01 / 04</span>
+            <span class="sec-line"></span>
+          </div>
+
+          <div class="hero-headline-wrap">
+            <h1 class="hero-title">
+              <span>IDEAS</span>
+              <span>IN MOTION</span>
+            </h1>
+          </div>
+
+          <div class="hero-subhead">
+            <p class="hero-desc">
+              BUILDING RELIABLE BACKENDS, AI-DRIVEN APPS, AND DETERMINISTIC SYSTEMS. WE TURN CONCEPTS INTO HIGH-PERFORMANCE CODE THAT MOVES.
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn-accent">
+              <span>EXPLORE WORK</span>
+              <span class="btn-arrow">→</span>
+            </a>
+            <button id="copy-email-hero" class="btn-outline">
+              <i data-lucide="copy" class="w-4 h-4"></i>
+              <span>COPY EMAIL</span>
+            </button>
+            <a href="https://github.com/Yashwanths-hub" target="_blank" rel="noopener noreferrer" class="btn-outline">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              <span>GITHUB</span>
+            </a>
+            <a href="https://www.linkedin.com/in/yashwanth-s-00a0a231b/" target="_blank" rel="noopener noreferrer" class="btn-outline">
+              <i data-lucide="linkedin" class="w-4 h-4"></i>
+              <span>LINKEDIN</span>
+            </a>
+          </div>
+
+          <div class="hero-bio-box">
+            <p>
+              Hi, I'm <strong class="text-dark">Yashwanth S</strong> — Computer Science undergraduate at Sathyabama Institute of Science and Technology (CGPA 8.9, Exp. 2027) &amp; Caterpillar Hackathon Winner experienced in React, Java, Spring Boot, PostgreSQL/MySQL, Kafka, and Redis.
+            </p>
+          </div>
+
+          <!-- Decorative Crosshair -->
+          <div class="crosshair-mark ch-1">+</div>
+        </div>
+
+        <!-- Right Hero Visual Column -->
+        <div class="hero-right">
+          <!-- Big Bold Red Circle Graphic matching the design image -->
+          <div class="red-circle-graphic"></div>
+
+          <!-- Handwritten Script Note: "Create Bigger" / "Build Bigger" -->
+          <div class="handwritten-accent">
+            <span>Create<br>&nbsp;&nbsp;Bigger</span>
+            <svg class="handwritten-underline" viewBox="0 0 120 20" fill="none">
+              <path d="M5 14 Q 60 2 115 12" stroke="#111111" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <!-- Interactive Subject Canvas / Frame sequence -->
+          <div class="subject-frame-container" id="subject-container">
+            <canvas id="hero-interactive-canvas"></canvas>
+            <div class="canvas-scrub-hint">
+              <i data-lucide="move-horizontal" class="w-3.5 h-3.5"></i>
+              <span>HOVER / SCROLL TO ANIMATE</span>
+            </div>
+          </div>
+
+          <!-- Technical Corner Annotations -->
+          <div class="meta-tag-corner">
+            <span class="meta-title">FULL STACK</span>
+            <span class="meta-desc">SINCE 2023</span>
+          </div>
+
+          <div class="crosshair-mark ch-2">+</div>
+          <div class="crosshair-mark ch-3">+</div>
+        </div>
+
+      </div>
+
+      <!-- Hero Quick Stats Row with crisp borders -->
+      <div class="hero-stats-bar">
+        <div class="stat-col reveal-item delay-1">
+          <div class="stat-number">8.9<span class="stat-suffix">/10</span></div>
+          <div class="stat-label">B.E. CSE CGPA · SATHYABAMA</div>
+        </div>
+        <div class="stat-col reveal-item delay-2">
+          <div class="stat-number">1ST PLACE</div>
+          <div class="stat-label">CATERPILLAR HACKATHON</div>
+        </div>
+        <div class="stat-col reveal-item delay-3">
+          <div class="stat-number">4+</div>
+          <div class="stat-label">END-TO-END PRODUCTION BUILDS</div>
+        </div>
+        <div class="stat-col reveal-item delay-4">
+          <div class="stat-number">28 TESTS</div>
+          <div class="stat-label">AUDIT-TRAIL DETERMINISM</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         02 / ABOUT & CAPABILITIES (3-COLUMN GRID)
+         ============================================== -->
+    <section id="about" class="section-about">
+      <div class="about-grid">
+
+        <!-- Column 1: Editorial About text -->
+        <div class="about-col col-text reveal-item delay-1">
+          <div class="section-badge">
+            <span class="sec-num">02</span>
+            <span class="sec-tag">ABOUT</span>
+            <span class="sec-line"></span>
+          </div>
+
+          <h2 class="col-title">
+            MORE<br />THAN DESIGN
+          </h2>
+
+          <p class="about-body">
+            I enjoy owning problems end-to-end — from designing relational schemas and event-driven Spring Boot backends to writing deterministic test suites and integrating machine learning and LLM APIs.
+          </p>
+
+          <p class="about-body-sub">
+            My recent work spans real-time industrial fleet telemetry with Redis and Apache Kafka, policy-enforced notification engines with audit-trail validation, and adaptive AI learning platforms.
+          </p>
+
+          <div class="about-actions">
+            <a href="#contact" class="arrow-link">
+              <span>GET IN TOUCH</span>
+              <span class="arrow">→</span>
+            </a>
+          </div>
+
+          <div class="tech-pills-row">
+            <span class="tech-pill">Java &amp; Spring Boot</span>
+            <span class="tech-pill">Python &amp; ML</span>
+            <span class="tech-pill">SQL &amp; Relational</span>
+            <span class="tech-pill">React &amp; REST APIs</span>
+          </div>
+        </div>
+
+        <!-- Column 2: Architectural / Systems Visual -->
+        <div class="about-col col-visual reveal-item delay-2">
+          <div class="arch-visual-wrap">
+            <!-- Sleek architectural brutalist monochrome visual -->
+            <svg class="arch-svg" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id="arch-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#1b1b1b"/>
+                  <stop offset="50%" stop-color="#2a2a2a"/>
+                  <stop offset="100%" stop-color="#0e0e0e"/>
+                </linearGradient>
+                <linearGradient id="beam-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+                  <stop offset="60%" stop-color="#cccccc" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="#111111" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <rect width="500" height="500" fill="url(#arch-grad)"/>
+              <!-- Architectural brutalist curve like the reference image -->
+              <path d="M0 0 L500 0 L500 350 Q 250 250 0 500 Z" fill="#141414"/>
+              <path d="M0 0 L500 280 Q 280 220 0 420 Z" fill="url(#beam-grad)"/>
+              <path d="M 0 500 Q 220 380 500 240 L 500 500 Z" fill="#0a0a0a"/>
+              <!-- Solitary silhouette figure on curve -->
+              <circle cx="270" cy="245" r="4" fill="#ffffff"/>
+              <rect x="268" y="249" width="4" height="14" rx="2" fill="#ffffff"/>
+              <!-- Subtle technical coordinates -->
+              <text x="30" y="470" fill="rgba(255,255,255,0.4)" font-family="Space Mono, monospace" font-size="11">SYS_CORE // 02.1 ARCHITECTURE</text>
+            </svg>
+
+            <div class="arch-overlay-text">
+              <span>SYSTEMS ARCHITECTURE &amp; RELIABILITY</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 3: Services / Capabilities List -->
+        <div class="about-col col-services reveal-item delay-3" id="capabilities">
+          <div class="services-header">
+            <h3 class="services-title">SERVICES</h3>
+          </div>
+
+          <div class="services-list">
+            <div class="service-item">
+              <span class="srv-name">Event-Driven Architecture</span>
+              <span class="srv-desc">Apache Kafka · Spring Boot · Microservices</span>
+            </div>
+            <div class="service-item">
+              <span class="srv-name">Low-Latency State &amp; Cache</span>
+              <span class="srv-desc">Redis · Session Store · Telemetry Queues</span>
+            </div>
+            <div class="service-item">
+              <span class="srv-name">Deterministic Test Engineering</span>
+              <span class="srv-desc">JUnit · 28-Test Suite · Audit Trail JSONL</span>
+            </div>
+            <div class="service-item">
+              <span class="srv-name">AI &amp; Machine Learning</span>
+              <span class="srv-desc">Python · Dyslexia Detection · LLM APIs</span>
+            </div>
+            <div class="service-item">
+              <span class="srv-name">Full-Stack &amp; Relational DBs</span>
+              <span class="srv-desc">React · PostgreSQL · MySQL · REST APIs</span>
+            </div>
+          </div>
+
+          <div class="services-footer">
+            <a href="#skills" class="arrow-link">
+              <span>VIEW ALL SERVICES</span>
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         03 / SELECTED PROJECTS (EDITORIAL GALLERY)
+         ============================================== -->
+    <section id="projects" class="section-projects">
+      <!-- Section Header with Filters -->
+      <div class="projects-top-bar">
+        <div class="section-badge">
+          <span class="sec-num">03</span>
+          <span class="sec-tag">SELECTED PROJECTS</span>
+          <span class="sec-line"></span>
+        </div>
+
+        <!-- Filter Pills -->
+        <div class="filter-group" id="project-filters">
+          <button type="button" data-filter="all" class="filter-btn active">ALL</button>
+          <button type="button" data-filter="backend" class="filter-btn">BACKEND &amp; SYSTEMS</button>
+          <button type="button" data-filter="ai" class="filter-btn">AI &amp; ML</button>
+          <button type="button" data-filter="fullstack" class="filter-btn">FULL-STACK</button>
+        </div>
+
+        <a href="https://github.com/Yashwanths-hub" target="_blank" rel="noopener noreferrer" class="arrow-link link-right">
+          <span>VIEW ALL PROJECTS</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="projects-grid" id="projects-grid">
+        <!-- Rendered via JavaScript -->
+      </div>
+    </section>
+
+    <!-- ==============================================
+         EXPERIENCE, EDUCATION & CREDENTIALS
+         ============================================== -->
+    <section id="experience" class="section-experience">
+      <div class="experience-grid">
+
+        <!-- Experience Box -->
+        <div class="exp-col reveal-item delay-1">
+          <div class="section-badge">
+            <span class="sec-num">03.1</span>
+            <span class="sec-tag">WORK HISTORY</span>
+            <span class="sec-line"></span>
+          </div>
+
+          <h3 class="exp-heading">VCODEZ</h3>
+          <div class="exp-subheading">Data Analyst Intern · Jun 2025 – Aug 2025</div>
+
+          <ul class="exp-bullets">
+            <li>Analyzed large datasets using SQL and Microsoft Excel to generate actionable business insights and structured reports.</li>
+            <li>Performed SQL- and Excel-based data cleaning, validation, and trend analysis on real-world datasets.</li>
+            <li>Collaborated with cross-functional team members to improve reporting accuracy and overall data quality.</li>
+          </ul>
+
+          <div class="tech-pills-row mt-4">
+            <span class="tech-pill">SQL</span>
+            <span class="tech-pill">Excel</span>
+            <span class="tech-pill">Data Validation</span>
+            <span class="tech-pill">Trend Reporting</span>
+          </div>
+        </div>
+
+        <!-- Education Box -->
+        <div class="exp-col reveal-item delay-2">
+          <div class="section-badge">
+            <span class="sec-num">03.2</span>
+            <span class="sec-tag">EDUCATION</span>
+            <span class="sec-line"></span>
+          </div>
+
+          <h3 class="exp-heading">SATHYABAMA INSTITUTE</h3>
+          <div class="exp-subheading">B.E. Computer Science &amp; Engineering · Expected 2027</div>
+          <div class="edu-stat">CGPA: <strong>8.9 / 10</strong></div>
+
+          <div class="school-sub">
+            <div class="school-name">Kola Saraswathi Vaishnav Sr. Sec. School</div>
+            <div class="school-detail">Grade 12 (CBSE, 2023): 79% &nbsp;|&nbsp; Grade 10 (CBSE, 2021): 79%</div>
+          </div>
+
+          <div class="section-badge mt-6">
+            <span class="sec-tag">HONORS &amp; AWARDS</span>
+          </div>
+          <ul class="exp-bullets">
+            <li><strong>Winner</strong> — Caterpillar Hackathon (Fleet Intelligence System)</li>
+            <li><strong>Recipient</strong> — Luminary Award (2025–2026)</li>
+            <li><strong>Top 15 Teams</strong> — THREX Hackathon (BrightBud 48-hr MVP)</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Capabilities / Tech Stack Tabs -->
+    <section id="skills" class="section-skills">
+      <div class="skills-top-bar">
+        <div class="section-badge">
+          <span class="sec-num">03.3</span>
+          <span class="sec-tag">CAPABILITIES &amp; CREDENTIALS</span>
+          <span class="sec-line"></span>
+        </div>
+
+        <div class="tab-group" id="skill-tabs">
+          <button type="button" data-tab="stack" class="tab-btn active">TECH STACK</button>
+          <button type="button" data-tab="quality" class="tab-btn">TESTING &amp; AI</button>
+          <button type="button" data-tab="certs" class="tab-btn">CERTIFICATIONS</button>
+        </div>
+      </div>
+
+      <div id="skills-content" class="skills-content-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- ==============================================
+         04 / LET'S CREATE TOGETHER (CONTACT SECTION)
+         ============================================== -->
+    <section id="contact" class="section-contact">
+      <div class="contact-grid">
+
+        <!-- Left Side: Massive Typography & CTAs -->
+        <div class="contact-left">
+          <div class="section-badge">
+            <span class="sec-num">04</span>
+            <span class="sec-tag">CONNECT</span>
+            <span class="sec-line"></span>
+          </div>
+
+          <div class="contact-headline-wrap">
+            <h2 class="contact-title">
+              LET'S<br />
+              CREATE<br />
+              TOGETHER
+            </h2>
+
+            <!-- Organic curved hand-drawn arrow pointing towards the form -->
+            <svg class="hand-drawn-arrow" viewBox="0 0 160 80" fill="none">
+              <path d="M10 60 Q 60 10 145 35" stroke="#111111" stroke-width="2.6" stroke-linecap="round"/>
+              <path d="M125 22 L 148 35 L 132 52" stroke="#111111" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <div class="contact-subhead">
+            <p class="contact-sub-title">HAVE A PROJECT OR ROLE IN MIND?</p>
+            <p class="contact-sub-desc">GET IN TOUCH — WE'D LOVE TO HEAR FROM YOU.</p>
+          </div>
+
+          <div class="contact-direct-cards">
+            <div class="direct-card">
+              <div class="card-label">EMAIL ADDRESS</div>
+              <div class="card-val-row">
+                <span class="card-val">iamyashwanths2004@gmail.com</span>
+                <button type="button" id="copy-email-btn" class="card-action">COPY</button>
+              </div>
+            </div>
+
+            <div class="direct-card">
+              <div class="card-label">PHONE NUMBER</div>
+              <div class="card-val-row">
+                <span class="card-val">+91 9344485378</span>
+                <button type="button" id="copy-phone-btn" class="card-action">COPY</button>
+              </div>
+            </div>
+
+            <div class="direct-links-row">
+              <a href="https://github.com/Yashwanths-hub" target="_blank" rel="noopener noreferrer" class="direct-social-link">
+                <span>GITHUB / YASHWANTHS-HUB</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/yashwanth-s-00a0a231b/" target="_blank" rel="noopener noreferrer" class="direct-social-link">
+                <span>LINKEDIN / YASHWANTH-S</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Fluid Ink Wave Visual & Quick Message Form -->
+        <div class="contact-right">
+          <!-- Fluid Generative Ink Wave Art matching reference screenshot -->
+          <div class="fluid-art-wrapper">
+            <svg class="fluid-wave-svg" viewBox="0 0 600 400" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="ink-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#0e0e0e"/>
+                  <stop offset="50%" stop-color="#222222"/>
+                  <stop offset="100%" stop-color="#0a0a0a"/>
+                </linearGradient>
+                <linearGradient id="ink-grad-2" x1="100%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#3a3a3a"/>
+                  <stop offset="50%" stop-color="#141414"/>
+                  <stop offset="100%" stop-color="#050505"/>
+                </linearGradient>
+              </defs>
+              <rect width="600" height="400" fill="#EBEAE5"/>
+              <!-- Multi-layered dynamic ink fluid splash -->
+              <path d="M 120 400 Q 180 200 320 230 T 560 120 L 600 0 L 600 400 Z" fill="url(#ink-grad-1)"/>
+              <path d="M 220 400 Q 280 260 400 280 T 600 200 L 600 400 Z" fill="url(#ink-grad-2)"/>
+              <path d="M 340 400 Q 420 310 520 330 T 600 290 L 600 400 Z" fill="#000000"/>
+              <!-- Swirling ribbon strokes -->
+              <path d="M 80 400 C 180 180, 380 120, 580 40" stroke="#111" stroke-width="8" fill="none" opacity="0.85"/>
+              <path d="M 100 400 C 200 200, 400 150, 590 80" stroke="#222" stroke-width="4" fill="none" opacity="0.5"/>
+              <path d="M 140 400 C 240 240, 440 200, 600 140" stroke="#fff" stroke-width="2" fill="none" opacity="0.6"/>
+            </svg>
+
+            <!-- Technical Crosshair & Coordinates -->
+            <div class="fluid-meta">
+              <div class="crosshair-mark ch-fluid">+</div>
+              <div class="geo-coords">
+                <span>13.0827° N</span>
+                <span>80.2707° E</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Message Form -->
+          <form id="contact-form" class="editorial-form reveal-item delay-2">
+            <h4 class="form-title">SEND A DIRECT MESSAGE</h4>
+            
+            <div class="form-field">
+              <label for="sender-name" class="field-label">NAME</label>
+              <input id="sender-name" type="text" required placeholder="Alex Rivera" class="field-input" />
+            </div>
+
+            <div class="form-field">
+              <label for="sender-email" class="field-label">EMAIL ADDRESS</label>
+              <input id="sender-email" type="email" required placeholder="alex@company.com" class="field-input" />
+            </div>
+
+            <div class="form-field">
+              <label for="sender-message" class="field-label">MESSAGE</label>
+              <textarea id="sender-message" rows="3" required placeholder="Let's connect about a backend or full-stack opportunity..." class="field-textarea"></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              <span>SEND MESSAGE</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Project Detail Modal -->
+  <div id="project-modal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <span id="modal-badge" class="modal-badge"></span>
+          <h3 id="modal-title" class="modal-title"></h3>
+          <p id="modal-subtitle" class="modal-subtitle"></p>
+        </div>
+        <button id="modal-close" type="button" aria-label="Close modal" class="modal-close-btn">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="modal-content">
+        <ul id="modal-bullets" class="modal-bullets"></ul>
+        <div id="modal-stack" class="modal-stack"></div>
+      </div>
+
+      <div id="modal-actions" class="modal-actions"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">YASHWANTH S <sup>®</sup></span>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://github.com/Yashwanths-hub" target="_blank" rel="noopener noreferrer">GITHUB</a>
+        <a href="https://www.linkedin.com/in/yashwanth-s-00a0a231b/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+        <a href="mailto:iamyashwanths2004@gmail.com">EMAIL</a>
+        <a href="#top">BACK TO TOP ↑</a>
+      </div>
+
+      <div class="footer-copy">
+        <span class="copy-line"></span>
+        <span class="copy-text">© 2026 YASHWANTH S. ALL RIGHTS RESERVED.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="lenis.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
